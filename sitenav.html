@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>商场导航</title>
+  <script src='./lib/flexible/flexible.js'></script>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/sitenav.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="left">
+    <a href="index.html">
+
+    </a>
+  </div>
+  <h1>商场导航</h1>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<main class="site-nav">
+  <div class="link clearfix">
+
+  </div>
+</main>
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/sitenav.js'></script>
+<script src="./js/common.js"></script>
+<script src='./js/template.js'></script>
+
+<script id="tpl" type="text/html">
+  {{each result as v i}}
+  <a href="javascript:;"><img src="{{v.navImg}}" alt="{{v.navTitle}}">{{v.navTitle}}</a>
+  {{/each}}
+</script>
+</body>
+</html>

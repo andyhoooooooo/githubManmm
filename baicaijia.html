@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>白菜价</title>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/baicaijia.css">
+</head>
+<body>
+<header class="header">
+  <div class="left">
+    <a href="index.html">
+
+    </a>
+  </div>
+  <h1>包菜价-淘宝内部券</h1>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<section class="nav" id="wrapper" >
+  <ul class="navBar clearfix" >
+  </ul>
+
+  <div class="search">
+    <img src="./images/rightIcon.jpg" >
+  </div>
+
+  <ul class="content">
+    <!--<li class="clearfix">
+      <div class="left fl">
+        <img src="./images/mnav.jpg" alt="">
+      </div>
+      <div class="right fl">
+        <h3>[包邮]双十一红包 今日开启</h3>
+        <p><span>¥</span></p>
+      </div>
+    </li>-->
+  </ul>
+</section>
+
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/baicaijia.js'></script>
+<script src="./js/common.js"></script>
+<script src="./lib/iscroll/iscroll.js"></script>
+<script src='./js/template.js'></script>
+<script id="tpl" type="text/html">
+  {{each result as v i}}
+      <li data-titleid="{{v.titleId}}">{{v.title}}</li>
+  {{/each}}
+</script>
+<script  id="tpls" type="text/html">
+  {{each result as v i}}
+  <li class="clearfix">
+    <div class="left fl">
+      {{#v.productImg}}
+    </div>
+    <div class="right fl">
+      <h3>{{#v.productName}}</h3>
+      <p class="price">{{#v.productPrice}}</p>
+      {{#v.productCouponRemain}}
+      <div class="buy">{{#v.productCoupon}} <span>{{#v.productHref}}</span></div>
+    </div>
+  </li>
+  {{/each}}
+
+</script>
+</body>
+</html>

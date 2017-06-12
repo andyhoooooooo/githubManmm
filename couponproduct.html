@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>优惠券</title>
+  <script src='./lib/flexible/flexible.js'></script>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/couponproduct.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="left">
+    <a href="index.html">
+
+    </a>
+  </div>
+  <h1>优惠券</h1>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<main class="conponproduct-main clearfix">
+  <div class="show">
+    --点餐前出示手机中的优惠券，即可享受优惠--
+  </div>
+  <!-- 商品列表 -->
+  <div class="products-list">
+    <ul>
+    </ul>
+  </div>
+</main>
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/couponproduct.js'></script>
+<script src="./js/common.js"></script>
+<script src='./js/template.js'></script>
+<script id="tpl" type="text/html">
+  {{each result as v i}}
+
+  <li class='product-item'>
+    <a href="javascript:;">
+      <div class="leftpic">
+        {{#v.couponProductImg}}
+      </div>
+      <div class="rightinfo">
+        <div class="tit">
+          <h3 class="name">{{v.couponProductName}}</h3>
+          <p class="price">{{v.couponProductPrice}}</p>
+        </div>
+        <div class="time">
+          <p>{{v.couponProductTime}}</p>
+        </div>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</script>
+</body>
+</html>

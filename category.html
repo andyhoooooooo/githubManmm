@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>比价搜索</title>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/category.css">
+</head>
+<body>
+<header class="header">
+  <div class="left">
+    <a href="javascript:;">
+      <img src="./images/header_logo.png">
+    </a>
+  </div>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+<section class="search">
+  <input type="text" placeholder='你请输入你想比价的商品'>
+  <input type="button" value="搜索" class="fr">
+</section>
+
+<section class='categoryInfo clearfix'>
+  <ul class='bigUl'>
+  </ul>
+</section>
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> --
+    <spn>掌上比价平台</spn>
+  </p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/category.js'></script>
+<script src='./js/common.js'></script>
+<script src='./js/template.js'></script>
+
+
+<script id='tpl' type='text/html'>
+  {{each result as value index}}
+  <li titleid='{{value.titleId}}'>{{value.title}}
+  </li>
+  {{/each}}
+</script>
+
+<script id='tpls' type='text/html'>
+  <ul class="smallUl clearfix">
+  {{each result as value index}}
+    <li><a href="productlist.html?categoryId={{value.categoryId}}&category={{value.category}}&pageid=1">{{value.category}}</a></li>
+  {{/each}}
+  </ul>
+</script>
+
+</body>
+</html>

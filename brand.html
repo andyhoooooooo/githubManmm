@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src='./lib/flexible/flexible.js'></script>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <link rel="stylesheet" href="./css/static.css">
+  <link rel="stylesheet" href="./css/brand.css"/>
+  <title>全部品牌分类</title>
+</head>
+<body>
+
+
+<header class="header">
+  <div class="left">
+    <a href="javascript:;">
+      <img src="./images/header_logo.png">
+    </a>
+  </div>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<section class="search">
+  <input type="text" placeholder='你请输入你想比价的商品'>
+  <input type="button" value="搜索" class="fr">
+</section>
+<!-- mtop 顶部栏和搜索框 -->
+<div class="mtop">
+  <!-- 3级导航菜单 -->
+  <nav class='mdaohang'>
+    <ul class='clearfix'>
+      <li><a href="index.html">首页 > </a></li>
+      <li><a href="javascript:;">品牌大全 > </a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="mbody">
+  <!-- 品牌大全 -->
+  <div class="brandall">
+    <!-- 标题栏 -->
+    <div class="brand-tit">平板电视哪个牌子好</div>
+    <div class='brand-distop'>
+      <ul class='mbrand-list clearfix'>
+      </ul>
+    </div>
+  </div>
+  <!-- 产品销量排行 -->
+  <div class="product-topsell">
+    <!-- 标题栏 -->
+    <div class="brand-tit">平板电视产品销量排行</div>
+    <!-- mproduct 产品模板  productlist 产品列表 -->
+    <section class="mproduct productlist">
+      <!-- 产品展示列表 -->
+      <div class="mpro-list">
+        <ul class='clearfix'>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <!-- 平板电视最新评论 -->
+  <div class="product-newcomment">
+    <!-- 标题栏 -->
+    <div class="brand-tit">平板电视最新评论</div>
+
+    <div class="comment-item">
+     <!-- <div class='mpro-list-item'>
+        <a href="product.html?productid={{v.productId}}&categoryid={{categoryid}}">
+          <div class="mitem-left">
+            <img src="http://pro.zuyushop.com:8015/ProPic/201510/Thumb/Thumb_201510001104382491.jpg" alt=""/>
+          </div>
+          <div class="mitem-info">
+            <div class="tit">乐视TV(Letv) 超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</div>
+          </div>
+        </a>
+      </div>-->
+      <!-- 评价 -->
+      <section class='mpingjia'>
+        <div class='pj-list-item'>
+
+        </div>
+      </section>
+    </div>
+
+  </div>
+</div>
+
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/brand.js'></script>
+<script src="./js/common.js"></script>
+<script src='./js/template.js'></script>
+<script id="tpl" type="text/html">
+  {{each result as v i}}
+
+  <li>
+    <a href="productlist.html?categoryId={{v.categoryId}}&category={{v.brandName}}&pageid=1">
+    <span class='f-left num'>{{i+1}}</span>
+    <span class='f-right micon micon-xiangyoujiantou'></span>
+    <div class='info'>
+      <p class='tit'>{{v.brandName}}</p>
+      <p class='sell'>{{v.brandInfo}}</p>
+    </div>
+  </a></li>
+  {{/each}}
+</script>
+<script id="tpls" type="text/html">
+  {{each result as v i}}
+
+  <li class='mpro-list-item' productId={{v.productId}} productListId={{v.productListId}}>
+    <a href="bijia.html?productid={{v.productId}}">
+      <div class="mitem-left">
+        {{#v.productImg}}
+      </div>
+      <div class="mitem-info">
+        <div class="tit">{{v.productName}}</div>
+        <div class='price'>{{v.productPrice}}</div>
+        <div class="other clearfix">
+          <span class='mall'>{{v.productQuote}}</span><span class='comment'>{{v.productCom}}</span>
+        </div>
+        <div class="stars">
+          <em></em>
+        </div>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</script>
+
+<script id="tplss" type="text/html">
+  {{each result as v i}}
+  <div class="tit clearfix">
+    <span class="name w50 f-left">{{v.comName}}:<em class="stars"></em></span>
+    <span class='date w50 f-right'>{{v.comTime}}</span>
+    <span class='mall w50 f-right'>{{v.comFrom}}</span>
+  </div>
+  <div class='info'>
+    {{v.comContent}}
+  </div>
+  {{/each}}
+</script>
+</body>
+</html>

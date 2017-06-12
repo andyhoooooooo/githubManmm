@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>凑单品</title>
+  <script src='./lib/flexible/flexible.js'></script>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/gsproduct.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="left">
+    <a href="index.html">
+
+    </a>
+  </div>
+  <h1>凑单品</h1>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<main class="gs-product">
+  <!-- 头部过滤器部分 -->
+  <div class="gs-header">
+    <!-- 右侧搜索按钮 -->
+    <div class="gs-search">
+      <i class="icon-search"></i>
+    </div>
+    <!-- 凑单品过滤器 -->
+    <div class="gs-filter">
+      <ul class="clearfix">
+        <li class="filter-item jd"><a href="javascript:;" >京东<i class="up"></i></a></li>
+        <li class="filter-item hb"><a href="javascript:;" >华北<i class="up"></i></a></li>
+        <li class="filter-item"><a href="javascript:;" >全部价格<i class="up"></i></a></li>
+      </ul>
+    </div>
+    <!-- 各种下拉框 -->
+    <div class="popbox hide" id="shop">
+      <ul>
+      </ul>
+    </div>
+    <div class="popbox hide" id="area">
+      <ul>
+      </ul>
+    </div>
+    <div class="popbox hide" id="price">
+      <ul>
+        <li class="active"><a href="javascript:;">全部价格</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 商品列表 -->
+  <div class="gs-product-list">
+    <ul class="container clearfix">
+    </ul>
+  </div>
+</main>
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/gsproduct.js'></script>
+<script src="./js/common.js"></script>
+<script src='./js/template.js'></script>
+<script id="tpl" type="text/html">
+  {{each result as v i}}
+  <li  data-shopid="{{v.shopId}}"><a href="javascript:;">{{v.shopName}}</a></li>
+  {{/each}}
+</script>
+<script id="tpls" type="text/html">
+  {{each result as v i}}
+  <li data-areaid="{{v.areaId}}"><a href="javascript:;">{{v.areaName}}</a></li>
+{{/each}}
+</script>
+<script id="tplss" type="text/html">
+  {{each result as v i}}
+
+
+<li class="gs-product-item">
+  <a href="javascript:;">
+    <div class="pic">
+      <img src="{{v.productImg}}">
+    </div>
+    <div class="tit">{{v.productName}}</div>
+    <div class="info">
+      <div class="price">{{v.productPrice}}</div>
+      <div class="btn">去凑单</div>
+    </div>
+  </a>
+</li>
+  {{/each}}
+</script>
+
+</body>
+</html>

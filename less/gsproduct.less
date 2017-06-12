@@ -1,0 +1,272 @@
+@import "px2rem.less";
+
+.header{
+  height: 100*@rem;
+  background-color: #ff841d;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .left{
+    flex: 1;
+    width: 371*@rem;
+    height: 50*@rem;
+    position: absolute;
+    left: 35*@rem;
+    top: 50%;
+    transform: translateY(-50%);
+    a{
+      display: inline-block;
+      background: url("./../images/icon_bar.png") no-repeat -208px -20px;
+      width:25*@rem;
+      height:60*@rem;
+    }
+  }
+  h1{
+    display: inline-block;
+    .font-size(22);
+    color: #fff;
+    text-align: center;
+    flex: 1;
+  }
+  .right{
+    flex: 1;
+    position: absolute;
+    right: 20*@rem;
+    width: 68*@rem;
+    height: 68*@rem;
+    img{
+      width: 68*@rem;
+    }
+  }
+}
+
+.bottomInfo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50*@rem 0;
+  background-color: #EFEFEF;
+  .font-size(16);
+  .login{
+    flex: 1;
+    height: 60*@rem;
+    border: 1px solid #aaa;
+    background-color: #EFEFEF;
+    border-left: none;
+    border-right: none;
+  }
+  .register{
+    flex: 1;
+    border: 1px solid #aaa;
+    background-color: #EFEFEF;
+    height: 60*@rem;
+  }
+  .top{
+    flex: 2;
+    height: 60*@rem;
+    border: 1px solid #aaa;
+    background-color: #EFEFEF;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    .font-size(16);
+    &::after{
+      content: '';
+      position: absolute;
+      background: url("./../images/top.jpg") no-repeat;
+      width: 70*@rem;
+      height: 70*@rem;
+      left: 20%;
+      top: 80%;
+      transform: translate(-50%,-50%);
+      background-size: 50%;
+    }
+  }
+}
+
+.copyright{
+  text-align: center;
+  background-color: #EFEFEF;
+  p{
+    .font-size(16);
+    font-weight: 700;
+    i{
+      color: #FD4373;
+    }
+    s{
+      color: #000;
+      margin: 0 10*@rem;
+    }
+    span{
+      color: #ccc;
+    }
+  }
+}
+
+/*----------- S 凑单品主体部分 ------------*/
+// 头部过滤器部分
+.gs-header {
+  background: #fff;
+  position: relative;
+
+  // 过滤器
+  .gs-filter {
+    overflow: hidden;
+    height: 74*@rem;
+    border-bottom: 1px solid #dadada;
+    ul {
+      display: flex;
+    }
+    li {
+      position: relative;
+      flex: 1;
+      height: 74*@rem;
+      > a {
+        display: block;
+        width: 100%;
+        height: 74*@rem;
+        line-height: 74*@rem;
+        text-align: center;
+        .font-size(16);
+        > i {
+          vertical-align: middle;
+          display: inline-block;
+          height: 40*@rem;
+          width: 40*@rem;
+          background: url("../images/up.svg") no-repeat;
+          -webkit-background-size: 40*@rem;
+          background-size: 40*@rem;
+        }
+      }
+    }
+
+  }
+
+  // 搜索框
+  .gs-search {
+    float: right;
+    border-left: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    width: 92*@rem;
+    height: 74*@rem;
+
+    .icon-search {
+      display: block;
+      margin: 0 auto;
+      height: 74*@rem;
+      width: 74*@rem;
+      background: url("../images/search.svg") no-repeat center;
+      background-size: 40*@rem 40*@rem;
+    }
+  }
+
+  // 各种下拉框
+  .popbox {
+    position: absolute;
+    top: 74*@rem;
+    left: 0;
+    width: 100%;
+z-index: 2;
+    &.hide {
+      display: none;
+    }
+    &.on {
+      display: block;
+    }
+    ul {
+      width: 100%;
+      > li {
+        background: #fff;
+        width: 100%;
+        border-bottom: 1px solid #dadada;
+
+        &.active:after {
+          content: "";
+          position: absolute;
+          right: 17*@rem;
+          top: 17*@rem;
+          height: 40*@rem;
+          width: 40*@rem;
+          background: url("../images/ok.svg") no-repeat center;
+          background-size: 40*@rem;
+        }
+
+
+        > a {
+          font-size: 24*@rem;
+          width: 100%;
+          display: block;
+          height: 80*@rem;
+          line-height: 80*@rem;
+          padding-left: 20*@rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+// 商品列表
+.gs-product-list {
+  ul {
+  }
+}
+
+.gs-product-item {
+  float: left;
+  width: 50%;
+  margin-top: 10*@rem;
+  padding: 10*@rem;
+
+  a {
+    background: #fff;
+    padding: 20*@rem;
+    width: 100%;
+    display: block;
+  }
+  .pic {
+    width: 100%;
+    img {
+      width: 280*@rem;
+      height: 280*@rem;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .tit {
+    height: 28*@rem;
+    line-height: 28*@rem;
+    word-break:keep-all;
+    white-space:nowrap;
+    .font-size(12);
+    margin-top: 8*@rem;
+    overflow: hidden;
+  }
+  .info {
+    position: relative;
+    margin-top: 4*@rem;
+    min-height: 50*@rem;
+    .price {
+      height: 50*@rem;
+      line-height: 50*@rem;
+      color: #f8601d;
+      .font-size(20);
+    }
+    .btn {
+      color: #fff;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 50*@rem;
+      line-height: 50*@rem;
+      width: 124*@rem;
+      text-align: center;
+      background: #ff9501;
+      border-radius: 3*@rem;
+    }
+  }
+}
+
+
+/*----------- E 凑单品主体部分 ------------*/

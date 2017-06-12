@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>慢慢买首页</title>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <header class="header">
+    <div class="left">
+      <a href="javascript:;">
+        <img src="./images/header_logo.png">
+      </a>
+    </div>
+    <div class="right">
+      <a href="javascript:;">
+        <img src="./images/header_app.png">
+      </a>
+    </div>
+  </header>
+  <section class="search">
+      <input type="text" placeholder='你请输入你想比价的商品'>
+    <input type="button" value="搜索" class="fr">
+  </section>
+  <section class="nav">
+    <ul class="tplUl clearfix">
+    </ul>
+  </section>
+  <section class="recommend">
+    <i>超值折扣推荐</i>
+    <img src="./images/more.png">
+  </section>
+  <section class="commodity">
+  </section>
+  <section class="info">
+    <a href="javascript:;">更多优惠信息 >></a>
+  </section>
+  <section class="recommend">
+    <i>品牌排行</i>
+    <img src="./images/more.png">
+  </section>
+  <section class="bottomInfo">
+    <input type="button" value="登录" class='login'>
+    <input type="button" value="注册" class='register'>
+    <button class='top'>返回顶部</button>
+  </section>
+  <section class="copyright">
+    <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+    <a href="javascript:;">m.manmanbuy.com</a>
+  </section>
+
+  <script src='./lib/jquery-1.12.4.js'></script>
+  <script src='./js/index.js'></script>
+  <script src="./js/common.js"></script>
+  <script src='./js/template.js'></script>
+  <script id="tpl" type="text/html">
+    {{each result as value index}}
+      <li>
+        <a href="{{value.titlehref}}" indexmenuId="{{value.indexmenuId}}">
+        {{#value.img}}
+        <p>{{value.name}}</p>
+        </a>
+      </li>
+    {{/each}}
+  </script>
+
+  <script id="tplZk" type="text/html">
+    {{each result as value index}}
+    <div class="pro clearfix" product='{{value.productId}}'>
+      <div class="fl">
+        {{#value.productImg2}}
+      </div>
+      <div class="fr">
+        <p>{{value.productName}}<i>{{value.productPinkage}}</i></p>
+        <p class="time">{{value.productFrom}} | {{value.productTime}} <span>{{value.productId}}</span> </p>
+      </div>
+    </div>
+    {{/each}}
+  </script>
+
+</body>
+</html>

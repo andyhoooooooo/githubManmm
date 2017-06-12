@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+
+  <title>全部分类</title>
+
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/productlist.css">
+</head>
+<body>
+<header class="header">
+  <div class="left">
+    <a href="javascript:;">
+      <img src="./images/header_logo.png">
+    </a>
+  </div>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<section class="search">
+  <input type="text" placeholder='你请输入你想比价的商品'>
+  <input type="button" value="搜索" class="fr">
+</section>
+
+<section class="productList">
+  <nav class="productListTitle">
+    <a href="index.html">首页</a>  >
+    <a href="category.html">全部分类</a>  >
+    <a href="javascript:;" class="categoryName"></a>  >
+    <input type="button" value="筛选">
+  </nav>
+  <div></div>
+</section>
+
+<section class="pages">
+  <a href="javascript:;" class="prev">上一页</a>
+  <select class="pageCount">
+
+  </select>
+  <a href="javascript:;" class="next">下一页</a>
+</section>
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/productlist.js'></script>
+<script src='./js/common.js'></script>
+<script src='./js/template.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as v }}
+  <div class="productListContent clearfix" productId="{{v.productId}}" productName="">
+    <div class="pic">
+      {{#v.productImg}}
+    </div>
+    <div class="content">
+      <p class="title">{{v.productName}}</p>
+      <p class="price">{{v.productPrice
+        }}</p>
+      <p><em>{{v.productQuote}}</em><em>{{v.productCom}}</em></p>
+    </div>
+  </div>
+  {{/each}}
+</script>
+
+</body>
+</html>

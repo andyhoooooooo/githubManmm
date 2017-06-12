@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>省钱控</title>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/moneyctrl.css">
+</head>
+<body>
+<header class="header">
+  <div class="left">
+    <a href="index.html">
+
+    </a>
+  </div>
+  <h1>省钱控-最新优惠</h1>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<section class="productList">
+  <div></div>
+</section>
+<section class="pages">
+  <a href="javascript:;" class="prev">上一页</a>
+  <select class="pageCount">
+
+  </select>
+  <a href="javascript:;" class="next">下一页</a>
+</section>
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/moneyctrl.js'></script>
+<script src="./js/common.js"></script>
+<script src='./js/template.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as v }}
+  <div class="productListContent clearfix" productId="{{v.productId}}" productName="">
+    <div class="pic">
+      {{#v.productImgSm}}
+    </div>
+    <div class="content">
+      <p class="title">{{v.productName}}</p>
+      <p class="price">{{v.productPinkage
+        }}</p>
+      <p><em>{{v.productFrom}}</em><em>{{v.productTime}}</em></p>
+    </div>
+  </div>
+  {{/each}}
+</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+@import "px2rem.less";
+
+.header{
+  height: 100*@rem;
+  background-color: #FF9E1F;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .left{
+    width: 371*@rem;
+    height: 50*@rem;
+    position: absolute;
+    left: 35*@rem;
+    img{
+      width: 371*@rem;
+    }
+  }
+  .right{
+    position: absolute;
+    right: 20*@rem;
+    width: 68*@rem;
+    height: 68*@rem;
+    img{
+      width: 68*@rem;
+    }
+  }
+}
+
+.search{
+  height: 100*@rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  input[type='text']{
+    text-indent: 30*@rem;
+    height: 60*@rem;
+    border-radius: 30*@rem;
+    background-color: #F1F1F1;
+    flex: 1;
+  }
+  input[type='button']{
+    height:60*@rem;
+    width:125*@rem;
+    border-radius: 30*@rem;
+    background-color: #FF841D;
+    color: #fff;
+    .font-size(16);
+    margin-left: 10*@rem;
+  }
+}
+
+.bottomInfo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50*@rem 0;
+  background-color: #EFEFEF;
+  .font-size(16);
+  .login{
+    flex: 1;
+    height: 60*@rem;
+    border: 1px solid #aaa;
+    background-color: #EFEFEF;
+    border-left: none;
+    border-right: none;
+  }
+  .register{
+    flex: 1;
+    border: 1px solid #aaa;
+    background-color: #EFEFEF;
+    height: 60*@rem;
+  }
+  .top{
+    flex: 2;
+    height: 60*@rem;
+    border: 1px solid #aaa;
+    background-color: #EFEFEF;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    .font-size(16);
+    &::after{
+      content: '';
+      position: absolute;
+      background: url("./../images/top.jpg") no-repeat;
+      width: 70*@rem;
+      height: 70*@rem;
+      left: 20%;
+      top: 80%;
+      transform: translate(-50%,-50%);
+      background-size: 50%;
+    }
+  }
+}
+
+.copyright{
+  text-align: center;
+  background-color: #EFEFEF;
+  p{
+    .font-size(16);
+    font-weight: 700;
+    i{
+      color: #FD4373;
+    }
+    s{
+      color: #000;
+      margin: 0 10*@rem;
+    }
+    span{
+      color: #ccc;
+    }
+  }
+}
+
+.productList{
+
+  .productListTitle{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
+    height: 75*@rem;
+    color: #000;
+    .font-size(14);
+    background-color: #ebebeb;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+    padding-left: 15*@rem;
+    line-height: 75*@rem;
+    input[type="button"]{
+      float: right;
+      display: block;
+      background-color: #d0d0d0;
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#d7d7d7), to(#f5f5f5));
+      background: -moz-linear-gradient(top, #d7d7d7, #f5f5f5);
+      background: -o-linear-gradient(top, #d7d7d7, #f5f5f5);
+      border-bottom: 1px solid #bababa;
+      box-shadow: 0 1px 2px #888;
+      border-radius: 10*@rem;
+      text-align: center;
+      .font-size(14);
+      border: none;
+      width:125*@rem;
+      height:55*@rem;
+      margin-right: 20*@rem;
+      margin-top:8*@rem;
+  }
+  }
+
+  .productListContent{
+    padding: 30*@rem 20*@rem 30*@rem 0;
+    border-bottom: 1px solid #aaa;
+    .pic{
+      float: left;
+      width: 30%;
+      text-align: center;
+      img{
+        width:160*@rem;
+        height:160*@rem;
+        vertical-align: middle;
+      }
+    }
+    .content{
+      float: left;
+      width:70%;
+      .title{
+        line-height: 40*@rem;
+      }
+      .price{
+        margin: 20*@rem 0;
+      }
+      p{
+        .font-size(14);
+        color: #000;
+        em{
+          margin: 0 20*@rem 0 0;
+          .font-size(12);
+          color: #a1a1a1;
+        }
+      }
+    }
+  }
+}
+
+.pages{
+  height: 90*@rem;
+  line-height:90*@rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a{
+    display: inline-block;
+    width:160*@rem;
+    height:70*@rem;
+    line-height:70*@rem;
+    color: #000;
+    background: linear-gradient(#f1f1f1,#d4d4d4);
+    border-radius: 10*@rem;
+    .font-size(16);
+    text-align: center;
+  }
+  select{
+    width:155*@rem;
+    height:70*@rem;
+    margin: 0 60*@rem;
+    .font-size(18);
+  }
+}

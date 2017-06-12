@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>国内折扣</title>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/moneyproduct.css">
+</head>
+<body>
+<header class="header">
+  <div class="left">
+    <a href="moneyctrl.html">
+
+    </a>
+  </div>
+  <h1>国内折扣</h1>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+<section class="container">
+
+</section>
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+
+<script src='lib/jquery-1.12.4.js'></script>
+<script src='./js/moneyproduct.js'></script>
+<script src="./js/common.js"></script>
+<script src='./js/template.js'></script>
+<script type="text/html" id="tpl">
+  {{each result as v}}
+  <div class="cuContent">
+    <h3>{{v.productName}}</h3>
+
+  </div>
+  <div class="text">
+    <span class="txt">{{v.productFrom}}</span>
+    <span class="time">{{v.productTime}}</span>
+    <span class="auto">{{v.productTips}}</span>
+  </div>
+  <div class="comment">
+    <div class="smallPic">
+      {{#v.productImgSm}}
+      <p>{{v.productInfo}}</p>
+    </div>
+    <div class="bigPic">
+      {{#v.productImgLg}}
+    </div>
+    <div class="area">
+      {{#v.productCity}}
+    </div>
+    <div class="golink">
+      <a href="javascript:;">前往购买</a>
+    </div>
+    <div class="qrcode">
+      <img src="./images/mmbweixin2.png" alt="">
+    </div>
+    {{#v.productComment}}
+
+
+  </div>
+  {{/each}}
+</script>
+</body>
+</html>

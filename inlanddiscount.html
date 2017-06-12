@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>国内折扣</title>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/inlanddiscount.css">
+</head>
+<body>
+<header class="header">
+  <div class="left">
+    <a href="index.html">
+
+    </a>
+  </div>
+  <h1>国内折扣</h1>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<section class="recommenProduct">
+  <ul class="recommenUl clearfix">
+  </ul>
+</section>
+
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/inlanddiscount.js'></script>
+<script src="./js/common.js"></script>
+<script src='./js/template.js'></script>
+<script id="tpl" type="text/html">
+  {{each result as v}}
+
+  <li pId="{{v.productId}}">
+    <a href="javarscript:;">
+      <div class="img">
+        {{#v.productImg}}
+      </div>
+      <div class="title">
+        {{v.productName}}
+      </div>
+      <div class="subtit">
+        {{v.productPrice}}
+      </div>
+      <div class="info">
+        {{v.productFrom}} | {{v.productTime}}
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</script>
+</body>
+</html>

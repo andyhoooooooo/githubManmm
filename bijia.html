@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>比价</title>
+  <script src='./lib/flexible/flexible_css.js'></script>
+  <script src='./lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/bijia.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="left">
+    <a href="javascript:;">
+      <img src="./images/header_logo.png">
+    </a>
+  </div>
+  <div class="right">
+    <a href="javascript:;">
+      <img src="./images/header_app.png">
+    </a>
+  </div>
+</header>
+
+<section class="search">
+  <input type="text" placeholder='你请输入你想比价的商品'>
+  <input type="button" value="搜索" class="fr">
+</section>
+
+<section class="productList">
+  <nav class="productListTitle">
+    <a href="index.html">首页</a>  >
+    <a href="category.html">全部分类</a>  >
+    <a href="javascript:;" class="categoryName"></a>  >
+    <input type="button" value="筛选">
+  </nav>
+<!--
+  <div class="productsList">
+
+  </div>
+
+  <div class="tab">
+    <a href="javascript:;">比价购买</a>
+    <a href="javascript:;">产品参数</a>
+    <a href="javascript:;">评论(2322)</a>
+  </div>
+
+  <div class="plist">
+  </div>-->
+
+
+</section>
+
+<section class="info">
+  <a href="javascript:;">查看更多评价</a>
+</section>
+
+<section class="bottomInfo">
+  <input type="button" value="登录" class='login'>
+  <input type="button" value="注册" class='register'>
+  <button class='top'>返回顶部</button>
+</section>
+
+<section class="copyright">
+  <p><i>手机APP下载</i><s>慢慢买手机版</s> -- <spn>掌上比价平台</spn></p>
+  <a href="javascript:;">m.manmanbuy.com</a>
+</section>
+
+
+
+<script src='./lib/jquery-1.12.4.js'></script>
+<script src='./js/bijia.js'></script>
+<script src='./js/common.js'></script>
+<script src='./js/template.js'></script>
+<script id="tpl" type="text/html">
+  {{each result as v i }}
+  <div class="productsList">
+    <div class="productName">
+      {{v.productName}}
+    </div>
+
+    <div class="productImg">
+      {{#v.productImg}}
+    </div>
+
+    <div class="productCollect">
+      <a href="###">
+        <img src="http://www.zuyushop.com/wap/images/sc.jpg" alt="">
+      </a>
+    </div>
+  </div>
+
+  <div class="tab">
+    <a href="javascript:;">比价购买</a>
+    <a href="javascript:;">产品参数</a>
+    <a href="javascript:;">评论(2322)</a>
+  </div>
+
+  <div class="plist">
+    {{#v.bjShop}}
+  </div>
+  <div class="evaluate">
+    网友评价
+  </div>
+  {{/each}}
+</script>
+<script type="text/html" id="tpls">
+  {{each result as v i }}
+  <div class="evaluateList">
+    <div class="title clearfix">
+      <span class="name fl">{{v.comName}}</span>
+      <span class="time fr">{{v.comTime}}</span>
+    </div>
+    <div class="from clearfix">
+      <span class="fr">{{v.comFrom}}</span>
+    </div>
+    <div class="content">
+      {{v.comContent}}
+    </div>
+  </div>
+  {{/each}}
+</script>
+</body>
+</html>
